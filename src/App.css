@@ -1,8 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --radius: 0.5rem
   }
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.chat-scrollbar::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+    background: white; 
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 4px; 
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: gray;
+}
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
 }
