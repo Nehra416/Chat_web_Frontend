@@ -14,8 +14,8 @@ const AllUsers = () => {
             {
                 allUsers.map((item, index) => {
                     return (
-                        <div key={index} onClick={() => dispatch(setSelectedUser(item._id), dispatch(setChattingPage('chat')))} className={`flex gap-3 items-center cursor-pointer hover:bg-gray-100 mx-2 rounded p-2 ${search === item._id && ' bg-gray-200'}`}>
-                            <img src={item.profilePic || me} alt="Dp" className='rounded-full w-12 h-12' />
+                        <div key={index} onClick={() => dispatch(setSelectedUser(item._id), dispatch(setChattingPage('chat')))} className={`flex gap-3 items-center cursor-pointer hover:bg-gray-100 mx-2 rounded p-2 `}>
+                            <img src={item.profilePic || me} alt="Dp" className='rounded-full w-12 h-12 bg-gray-100' />
                             <section className='flex flex-col flex-grow '>
                                 <span className='font-medium  max-w-[20vw] truncate'>{item.userName}</span>
                                 <section className='flex items-center gap-2 '>

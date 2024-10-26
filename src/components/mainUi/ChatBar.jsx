@@ -10,8 +10,9 @@ import axios from 'axios';
 const ChatBar = () => {
     const { activePage } = useSelector(store => store.activePage);
     const [search, setSearch] = useState('');
+    const [users, setUsers] = useState([]);
 
-    let handleSearch = (e) => {
+    const handleSearch = async (e) => {
         setSearch(e.target.value)
     }
 

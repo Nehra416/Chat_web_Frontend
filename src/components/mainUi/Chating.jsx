@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import me from "../../Img/default.png"
 import { MdCall } from "react-icons/md";
 import { FaVideo } from "react-icons/fa";
@@ -13,7 +13,7 @@ const Chating = () => {
     const [userData, setUserData] = useState();
     const [inputText, setInputText] = useState('')
     const [loading, setLoading] = useState(false);
-
+    const chatEndRef = useRef(null);
     const { selectedUser } = useSelector((state) => state.user);
     const { conversation } = useSelector((state) => state.chat);
     const dispatch = useDispatch();
@@ -60,6 +60,10 @@ const Chating = () => {
         }
     }
 
+    useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [conversation]);
+
 
     return (
         <div className='bg-white w-[58vw] h-[95vh] my-3 rounded-xl overflow-hidden relative'>
@@ -104,6 +108,7 @@ const Chating = () => {
                         )
                     })
                 }
+                <div ref={chatEndRef} />
             </div >
 
             {/* Send Message div */}
